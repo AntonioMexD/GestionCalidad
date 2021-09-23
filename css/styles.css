@@ -1,0 +1,81 @@
+.bodybg {
+    background-color: rgb(44, 71, 71);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 3em;
+    align-self: flex-end;
+}
+
+.carousel-inner img {
+    width: 1920px;
+    height: 1080px;
+    opacity: 0.8;
+}
+
+.navbar-brand img {
+    width: 180px;
+    height: 66px;
+}
+
+.navbar {
+    padding: .8rem;
+    background-color: #ffffff !important;
+}
+
+.nav-link {
+    font-size: 1.1em !important;
+    color: black !important;
+}
+
+.nav-link:hover {
+    color: #d5d5d5 !important;
+}
+
+.btn-danger {
+    background-color: black;
+    border-color: black;
+}
+
+.btn-primary {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.btn-warning {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.btn-warning:hover, .btn-warning:active, .btn-warning:focus {
+    color: white !important;
+    background-color: black !important;
+    border-color: white !important;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    color: white !important;
+    background-color: black !important;
+    border-color: white !important;
+}
+
+.btn-outline-info {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+.btn-outline-info:hover, .btn-outline-info:active, .btn-outline-info:focus {
+    color: white !important;
+    background-color: black !important;
+    border-color: white !important;
+}
+.TituloBlanco{
+    color: white;
+}
+.paddings{
+    padding: 10px;
+}

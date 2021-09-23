@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITAR ROPA</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/Images/logo3.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="background-color: rgb(220, 224, 224);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Boutiques.html">Boutiques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AboutUs.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id='logged'href="/Login.html">Sign in</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- body -->
+
+    <div class="bodybg">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <form id="edit-clothes">
+                        <div class="form-group">
+                            <label for="validationDefault01" class="text-light">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="validationDefault02" class="text-light">Talla</label>
+                            <select class="form-control" name="size" id="size">
+                                <option value="S">S</option>
+                                <option value="M">M </option>
+                                <option value="L">L</option>
+                                <option value="XL">XL </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationDefault03" class="text-light">Marca</label>
+                            <input type="text" class="form-control" id="brand" placeholder="Brand">
+                        </div>
+                        <div class="form-group">
+                            <label for="validationDefault04" class="text-light">Precio</label>
+                            <input type="number" class="form-control" id="price" placeholder="Price">
+                        </div>
+                        <div class="form-group">
+                            <label for="validationDefault05" class="text-light">Genero</label>
+                            <select class="form-control" name="genre" id="genre">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationDefault06" class="text-light">Stock</label>
+                            <input type="number" class="form-control" id="stock">
+                        </div>
+                        <div class="form-group">
+                            <label for="validationDefault07" class="text-light">Sales</label>
+                            <input type="number" class="form-control" id="sell" readonly>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Editar Vestimenta</button>
+                    </form>
+                    <br>
+                    <button onclick="deleteClothes()" class="btn btn-warning">Eliminar</button>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-dark text-white text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-0 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">BOUTIQUES COCHABAMBA</h5>
+                    <hr style="border-color: rgb(190, 196, 196); width: 200px;">
+                    <p>
+                        Encuentra ropa de las mejores marcas en todos nuestros boutiques en los ciudades mas
+                        competitivas de Bolivia.
+                    </p>
+                    <p>
+                        Horario de atencion al cliente de lunes a domingo de 08:00 am - 22:00 pm
+                    </p>
+                    <hr style="border-color: rgb(92, 97, 97);">
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Boutiques</h5>
+                    <hr style="border-color: rgb(190, 196, 196); width: 200px;">
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://fairplay.com.bo/" class="text-white">FAIR PLAY</a>
+                        </li>
+                        <li>
+                            <a href="https://www.impulse.bo/" class="text-white">IMPULSE</a>
+                        </li>
+                        <li>
+                            <a href="https://www.zara.com/" class="text-white">ZARA</a>
+                        </li>
+                        <li>
+                            <a href="https://www.hm.com/" class="text-white">H&M</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Marcas</h5>
+                    <hr style="border-color: rgb(190, 196, 196); width: 200px;">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-white">PUMA</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">NIKE</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">ADIDAS</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">UNDER ARMOUR</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Contactanos</h5>
+                    <hr style="border-color: rgb(190, 196, 196); width: 200px;">
+                    <ul class="list-unstyled">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                            </svg>
+                            <a href="#!" class="text-white">BOLIVIA</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                            </svg>
+                            <a href="#!" class="text-white">boutiques-bo@boutiques.com</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                            </svg>
+                            <a href="#!" class="text-white">+591 77968874</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>
+                            <a href="#!" class="text-white">(4) 4355679</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-white" href="https://boutiques-cba.com/">boutiques-cba.com</a>
+        </div>
+    </footer>
+
+
+    <!-- SCRIPT -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="/js/scriptClothesED.js"></script>
+
+</body>
+
+</html>
