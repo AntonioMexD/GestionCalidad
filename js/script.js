@@ -1,7 +1,9 @@
-window.addEventListener('load', function (event) {
+window.addEventListener('load', (event) => {
   const baseUrl = 'http://localhost:5000/api';
   if (event.origin !== baseUrl)
+  {
     return;
+  }
   const PrivateToken = JSON.parse(sessionStorage.getItem('token'));
   const user = sessionStorage.getItem('user');
   if (user != null) {
