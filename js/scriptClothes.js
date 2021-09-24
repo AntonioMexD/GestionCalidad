@@ -31,9 +31,8 @@ window.addEventListener('load', (event) => {
     let response = await fetch(req);
 
     try {
-      if (response.status === 200) {
-        let data = await response.json();
-        var clothesStringMap = data.map(c => `
+      let data = await response.json();
+      var clothesStringMap = data.map(c => `
                     <tr >
                         <td> ${c.name} </td>
                         <td> ${c.size} </td>
@@ -51,16 +50,11 @@ window.addEventListener('load', (event) => {
                         </td>
                     </tr>
                 `)
-        var clothesContent = `<ul id="clothesList">${clothesStringMap.join('')}</ul>`;
-        document.getElementById("clothes-list-content").innerHTML = clothesContent;
-      }
-      else {
-        console.log(error);
-        throw new error(await response.text());
-      }
-    }
-    catch (error) {
+      var clothesContent = `<ul id="clothesList">${clothesStringMap.join('')}</ul>`;
+      document.getElementById("clothes-list-content").innerHTML = clothesContent;
+    } catch (error) {
       console.log(error);
+      throw new error(await response.text());
     }
   }
 
@@ -97,47 +91,34 @@ window.addEventListener('load', (event) => {
 
       }
     }).then((response) => {
-      if (response.status === 201) {
-        console.log("Boutique created successfully");
         window.location.replace(`Clothes.html?id=${id}`)
-      }
-      else {
-        response.text().then((data) => {
-          debugger;
-          console.log(data);
-        });
-      }
-    }).catch((response) => {
+    }).catch((error) => {
       debugger;
-      console.log(data);
+      console.log(error);
     });
   }
   //Filtro
   function filter(e) {
     var x = document.getElementById("clothes-list-content").querySelectorAll("tr");
-
-    for (var i = 0; i < x.length; i++) {
-      let type = x[i].querySelectorAll("td")[1].innerText
+    x.forEach((element) => {
+      let type = element.querySelectorAll("td")[1].innerText
       let valorAFiltrar = e.target.id
-      x[i].style.display = "table-row";
+      element.style.display = "table-row";
       if (type != valorAFiltrar && valorAFiltrar != "All") {
-        x[i].style.display = "none";
+        element.style.display = "none";
       }
-
-    }
+    })
   }
   function filterGender(e) {
     var x = document.getElementById("clothes-list-content").querySelectorAll("tr");
-    for (var i = 0; i < x.length; i++) {
-      let type = x[i].querySelectorAll("td")[4].innerText
-
+    x.forEach((element) => {
+      let type = element.querySelectorAll("td")[4].innerText
       let valorAFiltrar = e.target.id
-      x[i].style.display = "table-row";
-      if (type != valorAFiltrar && valorAFiltrar != "All") {
-        x[i].style.display = "none";
+      element.style.display = "table-row";
+      if (type !== valorAFiltrar && valorAFiltrar !== "All") {
+        element.style.display = "none";
       }
-
-    }
+    })
   }
   function crearProducto() {
     window.location.replace(`/Clothes/CreateClothes.html?id=${id}`)
