@@ -1,41 +1,37 @@
-window.addEventListener('load', (event) =>
-{
+window.addEventListener('load', function (event) {
 
-    //<script src="js/scriptClothesED.js"></script>
+  //<script src="js/scriptClothesED.js"></script>
+  const baseUrl = 'http://localhost:5000/api/boutiques';
+  if (event.origin !== baseUrl)
+    return;
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
 
-    const baseUrl = 'http://localhost:5000/api/boutiques';
+  const idBoutique = urlParams.get('boutiqueIde');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
+  const PrivateToken = JSON.parse(sessionStorage.getItem('token'));
+  const user = sessionStorage.getItem('user');
+  if (user != null) {
+    document.getElementById('logged').innerText = user
+  }
 
-    const idBoutique = urlParams.get('boutiqueIde');
+  //GET
+  async function fetchGetClothes() {
+    const url = `${baseUrl}/${id}/clothes`
+    let h = new Headers();
+    h.append('Authorization', `Bearer ${PrivateToken}`);
+    let req = new Request(url, {
+      method: 'GET',
+      mode: 'cors',
+      headers: h
+    });
 
-    const PrivateToken = JSON.parse(sessionStorage.getItem('token'));
-    const user=sessionStorage.getItem('user');
-    if(user!=null)
-    {
-        document.getElementById('logged').innerText = user
-    }
+    let response = await fetch(req);
 
-    //GET
-    async function fetchGetClothes()
-    {
-        const url=`${baseUrl}/${id}/clothes`
-        let h=new Headers();
-        h.append('Authorization', `Bearer ${PrivateToken}`);
-        let req = new Request(url, {
-            method: 'GET',
-            mode: 'cors',
-            headers: h
-        });
-        
-        let response = await fetch(req);
-        
-        try{
-            if(response.status === 200)
-            {
-                let data = await response.json();
-                var clothesStringMap = data.map(c => `
+    try {
+      if (response.status === 200) {
+        let data = await response.json();
+        var clothesStringMap = data.map(c => `
                     <tr >
                         <td> ${c.name} </td>
                         <td> ${c.size} </td>
@@ -49,29 +45,21 @@ window.addEventListener('load', (event) =>
                         </td>
                     </tr>
                 `)
-                var clothesContent = `<ul id="clothesList">${clothesStringMap.join('')}</ul>`;
-                document.getElementById("clothes-list-content").innerHTML = clothesContent;
-            }
-            else
-            {
-                console.log(error);
-                throw new error(await response.text());
-            }
-        }
-        catch(error)
-        {
-            console.log(error);
-        }
+        var clothesContent = `<ul id="clothesList">${clothesStringMap.join('')}</ul>`;
+        document.getElementById("clothes-list-content").innerHTML = clothesContent;
+      }
+      else {
+        console.log(error);
+        throw new error(await response.text());
+      }
     }
-
-
-
-
-
-    var getClothes = document.getElementById("content-clothes")
-    if(getClothes)
-    {
-        getClothes.addEventListener('load', fetchGetClothes());
+    catch (error) {
+      console.log(error);
     }
+  }
 
+  var getClothes = document.getElementById("content-clothes")
+  if (getClothes) {
+    getClothes.addEventListener('load', fetchGetClothes());
+  }
 });
