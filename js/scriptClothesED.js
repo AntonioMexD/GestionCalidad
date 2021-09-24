@@ -19,9 +19,6 @@ h.append('Authorization', `Bearer ${PrivateToken}`);
 async function fetchGetClothe() {
     const url = `${baseUrl}/${idBoutique}/clothes/${idClothes}`;
 
-    //let PrivateToken = JSON.parse(sessionStorage.getItem('token'));
-    //let h = new Headers();
-   // h.append('Authorization', `Bearer ${PrivateToken}`);
     let req = new Request(url, {
         method: 'GET',
         mode: 'cors',
