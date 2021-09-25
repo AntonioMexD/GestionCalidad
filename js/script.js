@@ -83,15 +83,15 @@ window.addEventListener("load", (event) => {
     var x = document
       .getElementById("boutique-list")
       .querySelectorAll(".boutique");
-
-    for (var i = 0; i < x.length; i++) {
-      let type = x[i].querySelectorAll("h5")[0].innerText;
+    
+    x.forEach((el) => {
+      let type = el.querySelectorAll("h5")[0].innerText;
       let valorAFiltrar = e.target.id;
-      x[i].style.display = "block";
+      el.style.display = "block";
       if (type != valorAFiltrar && valorAFiltrar != "All") {
-        x[i].style.display = "none";
+        el.style.display = "none";
       }
-    }
+    })
   }
 
   var getBoutique = document.getElementById("content-boutique");
