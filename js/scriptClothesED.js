@@ -81,7 +81,7 @@ function updateClothes(event) {
         }
         
     })
-};
+}
 
 //DELETE
 function deleteClothes(event) {
@@ -94,7 +94,7 @@ function deleteClothes(event) {
         }).then((response) => {
             window.location.replace('/Clothes/Clothes.html?id=' + idBoutique)
         })
-};
+}
 
 fetchGetClothe();
 
