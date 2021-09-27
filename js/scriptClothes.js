@@ -70,7 +70,7 @@ window.addEventListener('load', (event) => {
       size: eventRegister.currentTarget.size.value,
       brand: eventRegister.currentTarget.brand.value,
       price: parseInt(eventRegister.currentTarget.price.value),
-      genre: eventRegister.currentTarget.genre.value,
+      genre: event.currentTarget.genre.value,
       stock: 50,
       sell: 0,
       boutiqueIde: parseInt(id)
