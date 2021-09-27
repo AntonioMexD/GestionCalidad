@@ -67,7 +67,7 @@ function updateBoutique(event)
         window.location.replace('/Boutiques.html')
     })
 
-};
+}
 
 //DELETE
 function deleteBoutique(event)
@@ -82,7 +82,7 @@ function deleteBoutique(event)
     }).then((response) => {
         window.location.replace('/Boutiques.html')
     })
-};
+}
 
 
 fetchGetBoutique();
