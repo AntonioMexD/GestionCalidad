@@ -3,14 +3,14 @@ window.addEventListener('load', function (event) {
   const baseUrl = 'http://localhost:5000/api/auth/Login';
   if (event.origin !== baseUrl) // Compliant
     return;
-  function login(event) {
+  function login(eventLogin) {
     event.preventDefault();
-    console.log(event.currentTarget.correo.value);
-    console.log(event.currentTarget.contra.value);
+    console.log(eventLogin.currentTarget.correo.value);
+    console.log(eventLogin.currentTarget.contra.value);
     var url = baseUrl;
     var data = {
-      Email: event.currentTarget.correo.value,
-      Password: event.currentTarget.contra.value,
+      Email: eventLogin.currentTarget.correo.value,
+      Password: eventLogin.currentTarget.contra.value,
     }
     fetch(url, {
       method: 'POST',
