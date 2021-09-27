@@ -7,8 +7,6 @@ window.addEventListener('load', function (event) {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
 
-  const idBoutique = urlParams.get('boutiqueIde');
-
   const PrivateToken = JSON.parse(sessionStorage.getItem('token'));
   const user = sessionStorage.getItem('user');
   if (user != null) {
