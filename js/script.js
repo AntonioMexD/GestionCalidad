@@ -51,17 +51,17 @@ window.addEventListener("load", (event) => {
   }
 
   //POST
-  function registerBoutique(event) {
-    console.log(event.currentTarget);
-    event.preventDefault();
+  function registerBoutique(eventRegister) {
+    console.log(eventRegister.currentTarget);
+    eventRegister.preventDefault();
     const url = `${baseUrl}/boutiques`;
 
     var data = {
-      name: event.currentTarget.name.value,
-      country: event.currentTarget.country.value,
-      address: event.currentTarget.address.value,
-      owner: event.currentTarget.owner.value,
-      mobilePhone: event.currentTarget.mobilePhone.value,
+      name: eventRegister.currentTarget.name.value,
+      country: eventRegister.currentTarget.country.value,
+      address: eventRegister.currentTarget.address.value,
+      owner: eventRegister.currentTarget.owner.value,
+      mobilePhone: eventRegister.currentTarget.mobilePhone.value,
     };
 
     fetch(url, {
