@@ -59,17 +59,17 @@ window.addEventListener('load', (event) => {
   }
 
   //POST
-  function registerClothes(event) {
+  function registerClothes(eventRegister) {
 
-    console.log(event.currentTarget);
+    console.log(eventRegister.currentTarget);
     event.preventDefault();
 
 
     var data = {
-      name: event.currentTarget.name.value,
-      size: event.currentTarget.size.value,
-      brand: event.currentTarget.brand.value,
-      price: parseInt(event.currentTarget.price.value),
+      name: eventRegister.currentTarget.name.value,
+      size: eventRegister.currentTarget.size.value,
+      brand: eventRegister.currentTarget.brand.value,
+      price: parseInt(eventRegister.currentTarget.price.value),
       genre: event.currentTarget.genre.value,
       stock: 50,
       sell: 0,
